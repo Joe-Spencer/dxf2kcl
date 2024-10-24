@@ -1,0 +1,8 @@
+// KCL code generated from DXF
+// Generator created by Joseph Spencer
+sketch1= startSketchOn('XY')
+   |> startProfileAt([0.0, 0.0], %)
+     |> lineTo([3.9999999999999996, 0.0], %)
+     |> lineTo([3.9999999999999996, 3.9999999999999996], %)
+     |> lineTo([0.0, 3.9999999999999996], %)
+     |> close(%)
