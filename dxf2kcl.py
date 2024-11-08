@@ -19,9 +19,11 @@ def convert_dxf_to_kcl(dxf_path, kcl_path):
                     x1=entity.dxf.start[0]
                     y1=entity.dxf.start[1]
                     kcl_file.write(f"   |> startProfileAt([{x1}, {y1}], %)\n")
-                    x2=entity.dxf.end[0]
-                    y2=entity.dxf.end[1]
-                    kcl_file.write(f"     |> line([{x2}, {y2}], %)\n")
+                    
+
+                    x2=entity.dxf.end[0]-entity.dxf.start[0]
+                    y2=entity.dxf.end[1]-entity.dxf.start[1]
+                    kcl_file.write(f"   |> line([{x2}, {y2}], %)\n")
                 elif entity.dxftype() == "CIRCLE":
                     x=entity.dxf.center[0]
                     y=entity.dxf.center[1]
